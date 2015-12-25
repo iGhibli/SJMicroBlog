@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		CC5333041C2CF1730066C85D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5333031C2CF1730066C85D /* main.m */; };
 		CC5333071C2CF1730066C85D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5333061C2CF1730066C85D /* AppDelegate.m */; };
-		CC53330A1C2CF1730066C85D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5333091C2CF1730066C85D /* ViewController.m */; };
 		CC53330D1C2CF1730066C85D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC53330B1C2CF1730066C85D /* Main.storyboard */; };
 		CC53330F1C2CF1730066C85D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC53330E1C2CF1730066C85D /* Assets.xcassets */; };
 		CC5333121C2CF1730066C85D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC5333101C2CF1730066C85D /* LaunchScreen.storyboard */; };
+		CC5333221C2CFF400066C85D /* GuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5333211C2CFF400066C85D /* GuideVC.m */; };
+		CC5333271C2D05B10066C85D /* MainTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5333261C2D05B10066C85D /* MainTabBarVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +21,15 @@
 		CC5333031C2CF1730066C85D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CC5333051C2CF1730066C85D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CC5333061C2CF1730066C85D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CC5333081C2CF1730066C85D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CC5333091C2CF1730066C85D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CC53330C1C2CF1730066C85D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CC53330E1C2CF1730066C85D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC5333111C2CF1730066C85D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC5333131C2CF1730066C85D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC5333201C2CFF400066C85D /* GuideVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideVC.h; sourceTree = "<group>"; };
+		CC5333211C2CFF400066C85D /* GuideVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideVC.m; sourceTree = "<group>"; };
+		CC5333231C2D01220066C85D /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		CC5333251C2D05B10066C85D /* MainTabBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarVC.h; sourceTree = "<group>"; };
+		CC5333261C2D05B10066C85D /* MainTabBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,14 +62,12 @@
 		CC5333011C2CF1730066C85D /* SJMicroBlog */ = {
 			isa = PBXGroup;
 			children = (
-				CC5333051C2CF1730066C85D /* AppDelegate.h */,
-				CC5333061C2CF1730066C85D /* AppDelegate.m */,
-				CC5333081C2CF1730066C85D /* ViewController.h */,
-				CC5333091C2CF1730066C85D /* ViewController.m */,
-				CC53330B1C2CF1730066C85D /* Main.storyboard */,
-				CC53330E1C2CF1730066C85D /* Assets.xcassets */,
-				CC5333101C2CF1730066C85D /* LaunchScreen.storyboard */,
-				CC5333131C2CF1730066C85D /* Info.plist */,
+				CC53331E1C2CF5060066C85D /* OpenSources */,
+				CC53331D1C2CF4F50066C85D /* Models */,
+				CC53331C1C2CF4EC0066C85D /* Views */,
+				CC53331B1C2CF4D50066C85D /* Controllers */,
+				CC53331A1C2CF4BC0066C85D /* Tools */,
+				CC5333191C2CF4B30066C85D /* Others */,
 				CC5333021C2CF1730066C85D /* Supporting Files */,
 			);
 			path = SJMicroBlog;
@@ -74,9 +76,78 @@
 		CC5333021C2CF1730066C85D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CC53330E1C2CF1730066C85D /* Assets.xcassets */,
+				CC5333101C2CF1730066C85D /* LaunchScreen.storyboard */,
+				CC5333131C2CF1730066C85D /* Info.plist */,
 				CC5333031C2CF1730066C85D /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CC5333191C2CF4B30066C85D /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				CC5333051C2CF1730066C85D /* AppDelegate.h */,
+				CC5333061C2CF1730066C85D /* AppDelegate.m */,
+				CC5333231C2D01220066C85D /* Common.h */,
+			);
+			name = Others;
+			sourceTree = "<group>";
+		};
+		CC53331A1C2CF4BC0066C85D /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
+		CC53331B1C2CF4D50066C85D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CC5333241C2D05790066C85D /* MainVC */,
+				CC53331F1C2CFEE60066C85D /* GuideVC */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		CC53331C1C2CF4EC0066C85D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CC53330B1C2CF1730066C85D /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		CC53331D1C2CF4F50066C85D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		CC53331E1C2CF5060066C85D /* OpenSources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = OpenSources;
+			sourceTree = "<group>";
+		};
+		CC53331F1C2CFEE60066C85D /* GuideVC */ = {
+			isa = PBXGroup;
+			children = (
+				CC5333201C2CFF400066C85D /* GuideVC.h */,
+				CC5333211C2CFF400066C85D /* GuideVC.m */,
+			);
+			name = GuideVC;
+			sourceTree = "<group>";
+		};
+		CC5333241C2D05790066C85D /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				CC5333251C2D05B10066C85D /* MainTabBarVC.h */,
+				CC5333261C2D05B10066C85D /* MainTabBarVC.m */,
+			);
+			name = MainVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,9 +220,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC53330A1C2CF1730066C85D /* ViewController.m in Sources */,
 				CC5333071C2CF1730066C85D /* AppDelegate.m in Sources */,
+				CC5333221C2CFF400066C85D /* GuideVC.m in Sources */,
 				CC5333041C2CF1730066C85D /* main.m in Sources */,
+				CC5333271C2D05B10066C85D /* MainTabBarVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +370,7 @@
 				CC5333181C2CF1730066C85D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

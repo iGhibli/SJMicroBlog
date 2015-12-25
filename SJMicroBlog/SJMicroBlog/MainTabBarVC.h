@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MainTabBarVC.h
 //  SJMicroBlog
 //
 //  Created by qingyun on 15/12/25.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface MainTabBarVC : UITabBarController
 
 @end
-

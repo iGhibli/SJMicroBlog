@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "Common.h"
 @interface AppDelegate ()
 
 @end
@@ -17,7 +17,23 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc]initWithFrame:kScreenB];
+    self.window.rootViewController = [self determineIsFirst];
+    [self.window makeKeyAndVisible];
+    
     return YES;
+}
+
+- (UIViewController *)determineIsFirst {
+    return [self instantiateVCWithIdentifier:@"mainID"];
+//    return [self instantiateVCWithIdentifier:@"guideID"];
+}
+
+- (UIViewController *)instantiateVCWithIdentifier:(NSString *)VCID
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    return [storyboard instantiateViewControllerWithIdentifier:VCID];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
