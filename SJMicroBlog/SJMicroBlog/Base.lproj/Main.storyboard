@@ -119,7 +119,7 @@
             </objects>
             <point key="canvasLocation" x="-604" y="1455"/>
         </scene>
-        <!--Item 2-->
+        <!--消息-->
         <scene sceneID="kP7-Jg-cG8">
             <objects>
                 <viewController id="wFQ-tI-pNz" sceneMemberID="viewController">
@@ -132,13 +132,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="oYw-VV-Fiq"/>
+                    <tabBarItem key="tabBarItem" title="消息" image="tabbar_message_center" id="oYw-VV-Fiq"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pec-ne-MRo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="923" y="791"/>
         </scene>
-        <!--Item-->
+        <!--View Controller-->
         <scene sceneID="xY9-c1-kOy">
             <objects>
                 <viewController id="UxH-eA-SkL" sceneMemberID="viewController">
@@ -151,13 +151,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="v5B-kg-6Nt"/>
+                    <tabBarItem key="tabBarItem" title="" image="tabbar_compose_icon_add" id="v5B-kg-6Nt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SjE-fJ-2Uv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="923" y="1455"/>
         </scene>
-        <!--Item-->
+        <!--发现-->
         <scene sceneID="gfX-5g-riy">
             <objects>
                 <viewController id="lRo-YU-7UF" sceneMemberID="viewController">
@@ -170,13 +170,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="5d6-a5-vwp"/>
+                    <tabBarItem key="tabBarItem" title="发现" image="tabbar_discover" id="5d6-a5-vwp"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hsx-Pd-BlJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="923" y="2107"/>
         </scene>
-        <!--Item-->
+        <!--我-->
         <scene sceneID="WCL-el-pEr">
             <objects>
                 <viewController id="z6K-Ir-3rY" sceneMemberID="viewController">
@@ -189,13 +189,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="eQ1-He-qin"/>
+                    <tabBarItem key="tabBarItem" title="我" image="tabbar_profile" id="eQ1-He-qin"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZXB-bn-6Wy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="923" y="2779"/>
         </scene>
-        <!--Item 1-->
+        <!--首页-->
         <scene sceneID="LkE-bh-Gwj">
             <objects>
                 <viewController id="t4v-cv-2OI" sceneMemberID="viewController">
@@ -208,7 +208,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="cfN-Ih-eC5"/>
+                    <tabBarItem key="tabBarItem" title="首页" image="tabbar_home" id="cfN-Ih-eC5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dli-wy-u8Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -241,5 +241,10 @@
         <image name="helper_authority_notice_guide" width="252" height="356"/>
         <image name="helper_authority_place_guide" width="252" height="356"/>
         <image name="helper_authority_weibocamera_guide" width="252" height="321"/>
+        <image name="tabbar_compose_icon_add" width="25" height="25"/>
+        <image name="tabbar_discover" width="30" height="30"/>
+        <image name="tabbar_home" width="30" height="30"/>
+        <image name="tabbar_message_center" width="30" height="30"/>
+        <image name="tabbar_profile" width="30" height="30"/>
     </resources>
 </document>

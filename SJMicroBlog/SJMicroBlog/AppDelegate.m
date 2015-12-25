@@ -26,8 +26,19 @@
 }
 
 - (UIViewController *)determineIsFirst {
-//    return [self instantiateVCWithIdentifier:@"mainID"];
-    return [self instantiateVCWithIdentifier:@"guideID"];
+    /**
+     * 判断当前版本号，确定是否显示新手引导页
+     */
+    //取出当前版本
+    NSString *currentVersion = [[NSBundle mainBundle]objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
+    //取出本地存储版本
+    NSString *localVersion = [[NSUserDefaults standardUserDefaults]objectForKey:kAppVersion];
+    //判断两个版本是否相同，确定是否显示引导页
+    if ([currentVersion isEqualToString:localVersion]) {
+        return [self instantiateVCWithIdentifier:@"mainID"];
+    }else {
+        return [self instantiateVCWithIdentifier:@"guideID"];
+    }
 }
 
 - (UIViewController *)instantiateVCWithIdentifier:(NSString *)VCID
@@ -39,6 +50,12 @@
 - (void)guideEnd
 {
     self.window.rootViewController = [self instantiateVCWithIdentifier:@"mainID"];
+    //引导结束，更新本地保存的版本
+    NSString *currentVersion = [[NSBundle mainBundle]objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
+    //设置本地保存路径
+    [[NSUserDefaults standardUserDefaults]setObject:currentVersion forKey:kAppVersion];
+    //更新到物理文件中
+    [[NSUserDefaults standardUserDefaults]synchronize];
 }
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
