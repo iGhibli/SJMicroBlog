@@ -27,6 +27,7 @@
 		CCBCC7121C2D6119007105A8 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = CCBCC7111C2D6119007105A8 /* Account.m */; };
 		CCBCC7151C2D6E0A007105A8 /* NSString+FilePath.m in Sources */ = {isa = PBXBuildFile; fileRef = CCBCC7141C2D6E0A007105A8 /* NSString+FilePath.m */; };
 		CCBCC7191C2D73FE007105A8 /* FindVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCBCC7181C2D73FE007105A8 /* FindVC.m */; };
+		CCBCC71D1C2D79FE007105A8 /* settingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCBCC71C1C2D79FE007105A8 /* settingVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,8 @@
 		CCBCC7141C2D6E0A007105A8 /* NSString+FilePath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FilePath.m"; sourceTree = "<group>"; };
 		CCBCC7171C2D73FE007105A8 /* FindVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindVC.h; sourceTree = "<group>"; };
 		CCBCC7181C2D73FE007105A8 /* FindVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindVC.m; sourceTree = "<group>"; };
+		CCBCC71B1C2D79FE007105A8 /* settingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = settingVC.h; sourceTree = "<group>"; };
+		CCBCC71C1C2D79FE007105A8 /* settingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = settingVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +149,7 @@
 		CC53331B1C2CF4D50066C85D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CCBCC71A1C2D79B7007105A8 /* profile */,
 				CCBCC7161C2D73D4007105A8 /* FindVC */,
 				CCBCC6EF1C2D54F2007105A8 /* Login */,
 				CC5333241C2D05790066C85D /* MainVC */,
@@ -241,6 +245,15 @@
 			name = FindVC;
 			sourceTree = "<group>";
 		};
+		CCBCC71A1C2D79B7007105A8 /* profile */ = {
+			isa = PBXGroup;
+			children = (
+				CCBCC71B1C2D79FE007105A8 /* settingVC.h */,
+				CCBCC71C1C2D79FE007105A8 /* settingVC.m */,
+			);
+			name = profile;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -316,6 +329,7 @@
 				CCBCC70A1C2D5E7C007105A8 /* AFNetworkReachabilityManager.m in Sources */,
 				CCBCC7121C2D6119007105A8 /* Account.m in Sources */,
 				CCBCC70F1C2D5E7C007105A8 /* AFURLSessionManager.m in Sources */,
+				CCBCC71D1C2D79FE007105A8 /* settingVC.m in Sources */,
 				CCBCC70D1C2D5E7C007105A8 /* AFURLRequestSerialization.m in Sources */,
 				CC5333071C2CF1730066C85D /* AppDelegate.m in Sources */,
 				CCBCC70E1C2D5E7C007105A8 /* AFURLResponseSerialization.m in Sources */,
