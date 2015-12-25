@@ -9,8 +9,9 @@
 #import "GuideVC.h"
 #import "Common.h"
 
-@interface GuideVC ()
+@interface GuideVC ()<UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *guideScrollView;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
 @end
 
@@ -18,8 +19,22 @@
 
 - (void)viewDidLoad {
     self.guideScrollView.contentSize = CGSizeMake(kScreenW * 4, kScreenH);
+    self.guideScrollView.delegate = self;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+- (IBAction)pageControlAction:(UIPageControl *)sender {
+    self.guideScrollView.contentOffset = CGPointMake(kScreenW * self.pageControl.currentPage, 0);
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
+{
+    self.pageControl.currentPage = scrollView.contentOffset.x / kScreenW;
 }
 
 - (void)didReceiveMemoryWarning {

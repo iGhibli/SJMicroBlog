@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mls-Gz-kUv">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" alwaysBounceVertical="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mls-Gz-kUv">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s5x-ZI-lad">
@@ -37,7 +37,7 @@
                                                 <rect key="frame" x="1800" y="0.0" width="600" height="580"/>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="wcb-Lt-tJs" firstAttribute="width" secondItem="s5x-ZI-lad" secondAttribute="width" multiplier="0.25" id="3Xt-HE-F5u"/>
                                             <constraint firstItem="M4E-2w-Ie8" firstAttribute="centerX" secondItem="s5x-ZI-lad" secondAttribute="centerX" multiplier="1.25" id="52l-qR-RAb"/>
@@ -58,6 +58,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="s5x-ZI-lad" firstAttribute="width" secondItem="mls-Gz-kUv" secondAttribute="width" multiplier="4" id="4FE-W3-nKK"/>
                                     <constraint firstItem="s5x-ZI-lad" firstAttribute="leading" secondItem="mls-Gz-kUv" secondAttribute="leading" id="Gbo-fX-FTT"/>
@@ -65,17 +66,28 @@
                                     <constraint firstItem="s5x-ZI-lad" firstAttribute="top" secondItem="mls-Gz-kUv" secondAttribute="top" id="zCw-Ti-jQQ"/>
                                 </constraints>
                             </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="R42-Hq-hxH">
+                                <rect key="frame" x="272" y="536.5" width="55" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="pageControlAction:" destination="V3L-pp-bVk" eventType="valueChanged" id="Ju2-KV-8eY"/>
+                                </connections>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="mls-Gz-kUv" firstAttribute="top" secondItem="FyB-kt-Acd" secondAttribute="bottom" id="4p7-m8-a4N"/>
+                            <constraint firstItem="R42-Hq-hxH" firstAttribute="centerY" secondItem="xw0-5x-jun" secondAttribute="centerY" multiplier="1.85" id="90K-jG-Gbq"/>
                             <constraint firstAttribute="trailing" secondItem="mls-Gz-kUv" secondAttribute="trailing" id="Cns-PR-MeS"/>
                             <constraint firstItem="mls-Gz-kUv" firstAttribute="leading" secondItem="xw0-5x-jun" secondAttribute="leading" id="GVA-G2-J80"/>
+                            <constraint firstItem="R42-Hq-hxH" firstAttribute="centerX" secondItem="xw0-5x-jun" secondAttribute="centerX" id="Sfg-c1-0Or"/>
                             <constraint firstItem="Hu1-rS-0Dc" firstAttribute="top" secondItem="mls-Gz-kUv" secondAttribute="bottom" id="aeN-gG-Be9"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="guideScrollView" destination="mls-Gz-kUv" id="UKn-ja-TOW"/>
+                        <outlet property="pageControl" destination="R42-Hq-hxH" id="U3D-cM-UTf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5xK-MQ-BCR" userLabel="First Responder" sceneMemberID="firstResponder"/>
