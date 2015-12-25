@@ -26,8 +26,8 @@
 }
 
 - (UIViewController *)determineIsFirst {
-    return [self instantiateVCWithIdentifier:@"mainID"];
-//    return [self instantiateVCWithIdentifier:@"guideID"];
+//    return [self instantiateVCWithIdentifier:@"mainID"];
+    return [self instantiateVCWithIdentifier:@"guideID"];
 }
 
 - (UIViewController *)instantiateVCWithIdentifier:(NSString *)VCID

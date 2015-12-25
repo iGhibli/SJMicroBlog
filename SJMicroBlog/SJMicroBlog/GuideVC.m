@@ -7,14 +7,17 @@
 //
 
 #import "GuideVC.h"
+#import "Common.h"
 
 @interface GuideVC ()
+@property (weak, nonatomic) IBOutlet UIScrollView *guideScrollView;
 
 @end
 
 @implementation GuideVC
 
 - (void)viewDidLoad {
+    self.guideScrollView.contentSize = CGSizeMake(kScreenW * 4, kScreenH);
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
