@@ -157,7 +157,7 @@
             </objects>
             <point key="canvasLocation" x="923" y="1455"/>
         </scene>
-        <!--发现-->
+        <!--View Controller-->
         <scene sceneID="gfX-5g-riy">
             <objects>
                 <viewController id="lRo-YU-7UF" sceneMemberID="viewController">
@@ -170,11 +170,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="发现" image="tabbar_discover" id="5d6-a5-vwp"/>
+                    <navigationItem key="navigationItem" id="zPb-lB-7DY">
+                        <barButtonItem key="rightBarButtonItem" title="登录" id="bcE-tD-Adx">
+                            <connections>
+                                <segue destination="p73-up-cvA" kind="presentation" id="D72-eR-EgV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hsx-Pd-BlJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="923" y="2107"/>
+            <point key="canvasLocation" x="1613" y="2107"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="wI6-aB-9b1">
+            <objects>
+                <viewController id="I32-Ab-8Xi" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1tD-by-vO5"/>
+                        <viewControllerLayoutGuide type="bottom" id="bzF-TW-RIS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ein-OM-mot">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="CgC-fj-rFg">
+                        <barButtonItem key="leftBarButtonItem" title="取消" id="mbq-WD-h7G"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SfI-0H-qye" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3137" y="2107"/>
         </scene>
         <!--我-->
         <scene sceneID="WCL-el-pEr">
@@ -227,13 +254,50 @@
                         <segue destination="t4v-cv-2OI" kind="relationship" relationship="viewControllers" id="2Eg-u3-vg3"/>
                         <segue destination="wFQ-tI-pNz" kind="relationship" relationship="viewControllers" id="1Vf-72-N6y"/>
                         <segue destination="UxH-eA-SkL" kind="relationship" relationship="viewControllers" id="cnm-7B-ssE"/>
-                        <segue destination="lRo-YU-7UF" kind="relationship" relationship="viewControllers" id="hmN-Fw-DLi"/>
+                        <segue destination="kma-Wt-FoV" kind="relationship" relationship="viewControllers" id="hmN-Fw-DLi"/>
                         <segue destination="z6K-Ir-3rY" kind="relationship" relationship="viewControllers" id="hBA-Ct-sww"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6wc-bO-sCI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="182" y="1455"/>
+        </scene>
+        <!--发现-->
+        <scene sceneID="8hC-d8-BVy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kma-Wt-FoV" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="发现" image="tabbar_discover" id="5d6-a5-vwp"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pGs-6b-3Zs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lRo-YU-7UF" kind="relationship" relationship="rootViewController" id="MKM-IM-QxX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mr3-M5-g68" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="923" y="2107"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UZx-KM-d40">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p73-up-cvA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jch-qN-X5f">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="I32-Ab-8Xi" kind="relationship" relationship="rootViewController" id="VZg-S5-TIu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GQ7-yz-grh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2325" y="2107"/>
         </scene>
     </scenes>
     <resources>

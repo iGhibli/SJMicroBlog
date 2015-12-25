@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //未登录时直接进入发现页面
+    self.selectedIndex = 3;
     // Do any additional setup after loading the view.
 }
 
