@@ -157,10 +157,10 @@
             </objects>
             <point key="canvasLocation" x="923" y="1455"/>
         </scene>
-        <!--View Controller-->
+        <!--FindVC-->
         <scene sceneID="gfX-5g-riy">
             <objects>
-                <viewController id="lRo-YU-7UF" sceneMemberID="viewController">
+                <viewController id="lRo-YU-7UF" customClass="FindVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WYC-N4-cmx"/>
                         <viewControllerLayoutGuide type="bottom" id="6ie-iv-iai"/>
@@ -182,10 +182,10 @@
             </objects>
             <point key="canvasLocation" x="1613" y="2107"/>
         </scene>
-        <!--View Controller-->
+        <!--LoginVC-->
         <scene sceneID="wI6-aB-9b1">
             <objects>
-                <viewController id="I32-Ab-8Xi" sceneMemberID="viewController">
+                <viewController id="I32-Ab-8Xi" customClass="LoginVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1tD-by-vO5"/>
                         <viewControllerLayoutGuide type="bottom" id="bzF-TW-RIS"/>
@@ -193,11 +193,30 @@
                     <view key="view" contentMode="scaleToFill" id="Ein-OM-mot">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="us0-FH-6qV">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="us0-FH-6qV" firstAttribute="leading" secondItem="Ein-OM-mot" secondAttribute="leading" id="6NX-IA-M2N"/>
+                            <constraint firstItem="bzF-TW-RIS" firstAttribute="top" secondItem="us0-FH-6qV" secondAttribute="bottom" id="DtD-Gr-u7m"/>
+                            <constraint firstAttribute="trailing" secondItem="us0-FH-6qV" secondAttribute="trailing" id="XMx-cj-9CG"/>
+                            <constraint firstItem="us0-FH-6qV" firstAttribute="top" secondItem="1tD-by-vO5" secondAttribute="bottom" id="lyW-Ui-zPg"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CgC-fj-rFg">
-                        <barButtonItem key="leftBarButtonItem" title="取消" id="mbq-WD-h7G"/>
+                        <barButtonItem key="leftBarButtonItem" title="取消" id="mbq-WD-h7G">
+                            <connections>
+                                <action selector="cancelAction:" destination="I32-Ab-8Xi" id="BJh-Km-tVz"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="us0-FH-6qV" id="Ppa-ol-nE9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SfI-0H-qye" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

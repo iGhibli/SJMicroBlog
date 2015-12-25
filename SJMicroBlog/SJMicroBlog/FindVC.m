@@ -1,27 +1,29 @@
 //
-//  MainTabBarVC.m
+//  FindVC.m
 //  SJMicroBlog
 //
 //  Created by qingyun on 15/12/25.
 //  Copyright © 2015年 iGhibli. All rights reserved.
 //
 
-#import "MainTabBarVC.h"
+#import "FindVC.h"
 #import "Account.h"
 
-@interface MainTabBarVC ()
+@interface FindVC ()
 
 @end
 
-@implementation MainTabBarVC
+@implementation FindVC
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if ([[Account currentAccount] isLogin]) {
+        self.navigationItem.rightBarButtonItem = nil;
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if (![[Account currentAccount] isLogin]) {
-        //未登录时直接进入发现页面
-        self.selectedIndex = 3;
-    }
-    self.tabBar.tintColor = [UIColor orangeColor];
     // Do any additional setup after loading the view.
 }
 

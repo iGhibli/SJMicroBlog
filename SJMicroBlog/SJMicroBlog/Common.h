@@ -19,4 +19,10 @@
 #define KRedirectURL    @"https://api.weibo.com/oauth2/default.html"
 #define kAppSecret      @"24bf8faff1ffea41b6c56f5d7fb02f4c"
 
+#define access_token    @"access_token"
+#define expires_in      @"expires_in"
+#define userID          @"uid"
+
+#define kAccountFileName    @"AccountFile"
+
 #endif /* Common_h */
