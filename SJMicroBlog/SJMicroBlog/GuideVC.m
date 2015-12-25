@@ -8,10 +8,12 @@
 
 #import "GuideVC.h"
 #import "Common.h"
+#import "AppDelegate.h"
 
 @interface GuideVC ()<UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *guideScrollView;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (weak, nonatomic) IBOutlet UIButton *guideEndBtnAction;
 
 @end
 
@@ -26,13 +28,19 @@
 - (IBAction)pageControlAction:(UIPageControl *)sender {
     self.guideScrollView.contentOffset = CGPointMake(kScreenW * self.pageControl.currentPage, 0);
 }
+- (IBAction)guideEndBtnAction:(UIButton *)sender {
+    
+    AppDelegate *app = [UIApplication sharedApplication].delegate;
+    [app guideEnd];
+    
+}
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
     
 }
 
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     self.pageControl.currentPage = scrollView.contentOffset.x / kScreenW;
 }

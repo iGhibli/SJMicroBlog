@@ -18,38 +18,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" alwaysBounceVertical="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mls-Gz-kUv">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mls-Gz-kUv">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s5x-ZI-lad">
-                                        <rect key="frame" x="0.0" y="0.0" width="2400" height="580"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="2400" height="600"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="helper_authority_miaopai_guide" translatesAutoresizingMaskIntoConstraints="NO" id="XxR-vC-gXC">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="580"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="helper_authority_notice_guide" translatesAutoresizingMaskIntoConstraints="NO" id="wcb-Lt-tJs">
-                                                <rect key="frame" x="600" y="0.0" width="600" height="580"/>
+                                                <rect key="frame" x="600" y="0.0" width="600" height="600"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="helper_authority_place_guide" translatesAutoresizingMaskIntoConstraints="NO" id="M4E-2w-Ie8">
-                                                <rect key="frame" x="1200" y="0.0" width="600" height="580"/>
+                                                <rect key="frame" x="1200" y="0.0" width="600" height="600"/>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="helper_authority_weibocamera_guide" translatesAutoresizingMaskIntoConstraints="NO" id="fe4-3l-tdr">
-                                                <rect key="frame" x="1800" y="0.0" width="600" height="580"/>
-                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3H9-pr-pxb">
+                                                <rect key="frame" x="1800" y="0.0" width="600" height="600"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="helper_authority_weibocamera_guide" translatesAutoresizingMaskIntoConstraints="NO" id="fe4-3l-tdr">
+                                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCX-a8-U7b">
+                                                        <rect key="frame" x="250" y="490" width="100" height="40"/>
+                                                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="PEq-jG-LGY"/>
+                                                            <constraint firstAttribute="height" constant="40" id="YcY-K5-mIf"/>
+                                                        </constraints>
+                                                        <state key="normal" title="进入微博"/>
+                                                        <connections>
+                                                            <action selector="guideEndBtnAction:" destination="V3L-pp-bVk" eventType="touchUpInside" id="Gf0-EY-dNd"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="fe4-3l-tdr" secondAttribute="bottom" id="E84-76-OPl"/>
+                                                    <constraint firstItem="fe4-3l-tdr" firstAttribute="top" secondItem="3H9-pr-pxb" secondAttribute="top" id="MSB-au-TAT"/>
+                                                    <constraint firstItem="fe4-3l-tdr" firstAttribute="leading" secondItem="3H9-pr-pxb" secondAttribute="leading" id="Nos-Cv-NFe"/>
+                                                    <constraint firstItem="UCX-a8-U7b" firstAttribute="centerX" secondItem="3H9-pr-pxb" secondAttribute="centerX" id="SsE-98-1GA"/>
+                                                    <constraint firstItem="UCX-a8-U7b" firstAttribute="centerY" secondItem="3H9-pr-pxb" secondAttribute="centerY" multiplier="1.7" id="iEK-wD-ZpJ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="fe4-3l-tdr" secondAttribute="trailing" id="suu-pe-KbW"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
-                                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="wcb-Lt-tJs" firstAttribute="width" secondItem="s5x-ZI-lad" secondAttribute="width" multiplier="0.25" id="3Xt-HE-F5u"/>
                                             <constraint firstItem="M4E-2w-Ie8" firstAttribute="centerX" secondItem="s5x-ZI-lad" secondAttribute="centerX" multiplier="1.25" id="52l-qR-RAb"/>
-                                            <constraint firstItem="fe4-3l-tdr" firstAttribute="width" secondItem="s5x-ZI-lad" secondAttribute="width" multiplier="0.25" id="ECB-Xt-Jek"/>
-                                            <constraint firstItem="fe4-3l-tdr" firstAttribute="top" secondItem="s5x-ZI-lad" secondAttribute="top" id="GRL-Rc-nhU"/>
-                                            <constraint firstItem="fe4-3l-tdr" firstAttribute="height" secondItem="s5x-ZI-lad" secondAttribute="height" id="RvH-aB-DIq"/>
+                                            <constraint firstItem="3H9-pr-pxb" firstAttribute="width" secondItem="s5x-ZI-lad" secondAttribute="width" multiplier="0.25" id="758-CM-oc6"/>
+                                            <constraint firstItem="3H9-pr-pxb" firstAttribute="height" secondItem="s5x-ZI-lad" secondAttribute="height" id="E6g-xy-Jd2"/>
                                             <constraint firstItem="wcb-Lt-tJs" firstAttribute="top" secondItem="s5x-ZI-lad" secondAttribute="top" id="Swk-LD-4IY"/>
                                             <constraint firstItem="wcb-Lt-tJs" firstAttribute="height" secondItem="s5x-ZI-lad" secondAttribute="height" id="U8c-ob-baO"/>
                                             <constraint firstItem="XxR-vC-gXC" firstAttribute="top" secondItem="s5x-ZI-lad" secondAttribute="top" id="aTN-nP-tfE"/>
+                                            <constraint firstItem="3H9-pr-pxb" firstAttribute="top" secondItem="s5x-ZI-lad" secondAttribute="top" id="bcF-on-vLp"/>
                                             <constraint firstItem="XxR-vC-gXC" firstAttribute="centerX" secondItem="s5x-ZI-lad" secondAttribute="centerX" multiplier="0.25" id="bqU-SK-yns"/>
                                             <constraint firstItem="M4E-2w-Ie8" firstAttribute="width" secondItem="s5x-ZI-lad" secondAttribute="width" multiplier="0.25" id="o3C-T0-cb5"/>
-                                            <constraint firstItem="fe4-3l-tdr" firstAttribute="centerX" secondItem="s5x-ZI-lad" secondAttribute="centerX" multiplier="1.75" id="ouN-3s-r22"/>
+                                            <constraint firstItem="3H9-pr-pxb" firstAttribute="centerX" secondItem="s5x-ZI-lad" secondAttribute="centerX" multiplier="1.75" id="p1o-qZ-j3d"/>
                                             <constraint firstItem="M4E-2w-Ie8" firstAttribute="top" secondItem="s5x-ZI-lad" secondAttribute="top" id="tt3-2e-cnb"/>
                                             <constraint firstItem="XxR-vC-gXC" firstAttribute="width" secondItem="s5x-ZI-lad" secondAttribute="width" multiplier="0.25" id="uSN-aR-dHN"/>
                                             <constraint firstItem="XxR-vC-gXC" firstAttribute="height" secondItem="s5x-ZI-lad" secondAttribute="height" id="vm5-dF-680"/>
@@ -58,7 +83,6 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="s5x-ZI-lad" firstAttribute="width" secondItem="mls-Gz-kUv" secondAttribute="width" multiplier="4" id="4FE-W3-nKK"/>
                                     <constraint firstItem="s5x-ZI-lad" firstAttribute="leading" secondItem="mls-Gz-kUv" secondAttribute="leading" id="Gbo-fX-FTT"/>
@@ -77,15 +101,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="mls-Gz-kUv" firstAttribute="top" secondItem="FyB-kt-Acd" secondAttribute="bottom" id="4p7-m8-a4N"/>
                             <constraint firstItem="R42-Hq-hxH" firstAttribute="centerY" secondItem="xw0-5x-jun" secondAttribute="centerY" multiplier="1.85" id="90K-jG-Gbq"/>
+                            <constraint firstItem="mls-Gz-kUv" firstAttribute="top" secondItem="xw0-5x-jun" secondAttribute="top" id="9Eo-XY-jyg"/>
                             <constraint firstAttribute="trailing" secondItem="mls-Gz-kUv" secondAttribute="trailing" id="Cns-PR-MeS"/>
+                            <constraint firstItem="Hu1-rS-0Dc" firstAttribute="top" secondItem="mls-Gz-kUv" secondAttribute="bottom" id="E3r-sT-1ql"/>
                             <constraint firstItem="mls-Gz-kUv" firstAttribute="leading" secondItem="xw0-5x-jun" secondAttribute="leading" id="GVA-G2-J80"/>
                             <constraint firstItem="R42-Hq-hxH" firstAttribute="centerX" secondItem="xw0-5x-jun" secondAttribute="centerX" id="Sfg-c1-0Or"/>
-                            <constraint firstItem="Hu1-rS-0Dc" firstAttribute="top" secondItem="mls-Gz-kUv" secondAttribute="bottom" id="aeN-gG-Be9"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="guideEndBtnAction" destination="UCX-a8-U7b" id="C9t-ck-paf"/>
                         <outlet property="guideScrollView" destination="mls-Gz-kUv" id="UKn-ja-TOW"/>
                         <outlet property="pageControl" destination="R42-Hq-hxH" id="U3D-cM-UTf"/>
                     </connections>
