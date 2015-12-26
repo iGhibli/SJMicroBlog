@@ -55,6 +55,16 @@
     return NO;
 }
 
+//退出登录，清除登录信息。
+- (void)logout {
+    self.accessToken = nil;
+    self.expires = nil;
+    self.UID = nil;
+    NSString *filePath = [NSString filePathInDocumentsWithFileName:kAccountFileName];
+    [[NSFileManager defaultManager] removeItemAtPath:filePath error:nil];
+}
+
+
 #pragma mark - NSCoding
 - (void)encodeWithCoder:(NSCoder *)aCoder {
     //
