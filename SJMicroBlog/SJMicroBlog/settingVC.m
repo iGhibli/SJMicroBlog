@@ -8,6 +8,7 @@
 
 #import "settingVC.h"
 #import "Account.h"
+#import "MainTabBarVC.h"
 
 @interface settingVC ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -80,12 +81,16 @@
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
         UIAlertAction *firstAction = [UIAlertAction actionWithTitle:@"退出" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
             
-#warning Here!
             //删除登录信息
-            [[Account currentAccount] logout];
-            //退出当前登录
+            [[Account currentAccount] logoutAndDeleteAllInfo];
+            //模态消失当前界面
             [self.navigationController popViewControllerAnimated:YES];
-            
+            //获取Window
+            UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
+            //通过Window的RootViewController取到MainTabBarVC
+            MainTabBarVC *mainVC = (MainTabBarVC *)window.rootViewController;
+            //退出跳转到发现界面
+            [mainVC logoutJumpToFindVC];
             
         }];
         UIAlertAction *secondAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];

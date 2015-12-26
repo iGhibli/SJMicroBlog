@@ -10,7 +10,7 @@
 #import "Account.h"
 
 @interface FindVC ()
-
+@property (nonatomic, strong) UIBarButtonItem *loginItem;
 @end
 
 @implementation FindVC
@@ -18,7 +18,12 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     if ([[Account currentAccount] isLogin]) {
+        self.loginItem = self.navigationItem.rightBarButtonItem;
         self.navigationItem.rightBarButtonItem = nil;
+    }else {
+        if (self.loginItem) {
+            self.navigationItem.rightBarButtonItem = self.loginItem;
+        }
     }
 }
 

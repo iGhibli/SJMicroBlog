@@ -24,5 +24,6 @@
 #define userID          @"uid"
 
 #define kAccountFileName    @"AccountFile"
+#define kLoginSuccess       @"LoginSuccess"
 
 #endif /* Common_h */

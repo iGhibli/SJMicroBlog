@@ -18,6 +18,6 @@
 - (BOOL)isLogin;
 
 //退出登录，清除登录信息。
-- (void)logout;
+- (void)logoutAndDeleteAllInfo;
 
 @end

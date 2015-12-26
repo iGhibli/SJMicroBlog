@@ -10,4 +10,6 @@
 
 @interface MainTabBarVC : UITabBarController
 
+- (void)logoutJumpToFindVC;
+
 @end

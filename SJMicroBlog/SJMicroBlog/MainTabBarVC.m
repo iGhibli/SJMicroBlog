@@ -8,6 +8,8 @@
 
 #import "MainTabBarVC.h"
 #import "Account.h"
+#import "Common.h"
+#import "AppDelegate.h"
 
 @interface MainTabBarVC ()
 
@@ -22,7 +24,23 @@
         self.selectedIndex = 3;
     }
     self.tabBar.tintColor = [UIColor orangeColor];
-    // Do any additional setup after loading the view.
+
+    //注册登录成功通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginSuccesss) name:kLoginSuccess object:nil];
+}
+
+- (void)loginSuccesss {
+    //登录成功，切换主控制器的选择
+    self.selectedIndex = 0;
+}
+
+- (void)logoutJumpToFindVC
+{
+    //退出时切换到FindVC
+    self.selectedIndex = 3;
+    //再跳转到登录界面
+    UIViewController *VC = [self.storyboard instantiateViewControllerWithIdentifier:@"loginNavigationID"];
+    [self presentViewController:VC animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

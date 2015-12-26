@@ -14,5 +14,7 @@
 
 - (void)guideEnd;
 
+- (UIViewController *)instantiateVCWithIdentifier:(NSString *)VCID;
+
 @end
 

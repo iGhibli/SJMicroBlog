@@ -52,11 +52,14 @@
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/plain"];
         [manager POST:requestURLString parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            //查看网络请求结果
             NSLog(@"%@",responseObject);
-            //
+            //保存网络请求结果数据
             [[Account currentAccount] saveLogin:responseObject];
-            //
+            //模态消失当前登录界面
             [self dismissViewControllerAnimated:YES completion:nil];
+            //登录完成通过注册好的通知跳转到首页
+            [[NSNotificationCenter defaultCenter] postNotificationName:kLoginSuccess object:nil];
             
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"!!!!!!%@",error);
