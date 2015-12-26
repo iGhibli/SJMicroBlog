@@ -20,4 +20,7 @@
 //退出登录，清除登录信息。
 - (void)logoutAndDeleteAllInfo;
 
+//取到AccountToken
+- (NSMutableDictionary *)requestToken;
+
 @end

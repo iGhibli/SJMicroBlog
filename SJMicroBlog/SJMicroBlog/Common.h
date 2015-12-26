@@ -26,4 +26,6 @@
 #define kAccountFileName    @"AccountFile"
 #define kLoginSuccess       @"LoginSuccess"
 
+#define kBaseURL            @"https://api.weibo.com/2"
+
 #endif /* Common_h */

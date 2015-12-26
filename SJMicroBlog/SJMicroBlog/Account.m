@@ -84,4 +84,17 @@
     return self;
 }
 
+/**
+ *  requestToken
+ *
+ *  @return NSMutableDictionary
+ */
+- (NSMutableDictionary *)requestToken
+{
+    if (self.isLogin) {
+        return [NSMutableDictionary dictionaryWithObject:self.accessToken forKey:access_token];
+    }
+    return nil;
+}
+
 @end

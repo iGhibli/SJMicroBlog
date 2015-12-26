@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC2A58451C2E93DC0038566D /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2A58441C2E93DC0038566D /* HomeVC.m */; };
+		CC2A58481C2EAD4B0038566D /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2A58471C2EAD4B0038566D /* HomeCell.m */; };
 		CC5333041C2CF1730066C85D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5333031C2CF1730066C85D /* main.m */; };
 		CC5333071C2CF1730066C85D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5333061C2CF1730066C85D /* AppDelegate.m */; };
 		CC53330D1C2CF1730066C85D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC53330B1C2CF1730066C85D /* Main.storyboard */; };
@@ -31,6 +33,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC2A58431C2E93DC0038566D /* HomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
+		CC2A58441C2E93DC0038566D /* HomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeVC.m; sourceTree = "<group>"; };
+		CC2A58461C2EAD4B0038566D /* HomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
+		CC2A58471C2EAD4B0038566D /* HomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
 		CC5332FF1C2CF1730066C85D /* SJMicroBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SJMicroBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC5333031C2CF1730066C85D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CC5333051C2CF1730066C85D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -86,6 +92,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC2A58421C2E93A40038566D /* HomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				CC2A58431C2E93DC0038566D /* HomeVC.h */,
+				CC2A58441C2E93DC0038566D /* HomeVC.m */,
+			);
+			name = HomeVC;
+			sourceTree = "<group>";
+		};
 		CC5332F61C2CF1730066C85D = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +164,7 @@
 		CC53331B1C2CF4D50066C85D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CC2A58421C2E93A40038566D /* HomeVC */,
 				CCBCC71A1C2D79B7007105A8 /* profile */,
 				CCBCC7161C2D73D4007105A8 /* FindVC */,
 				CCBCC6EF1C2D54F2007105A8 /* Login */,
@@ -162,6 +178,8 @@
 			isa = PBXGroup;
 			children = (
 				CC53330B1C2CF1730066C85D /* Main.storyboard */,
+				CC2A58461C2EAD4B0038566D /* HomeCell.h */,
+				CC2A58471C2EAD4B0038566D /* HomeCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -325,6 +343,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCBCC70C1C2D5E7C007105A8 /* AFURLConnectionOperation.m in Sources */,
+				CC2A58451C2E93DC0038566D /* HomeVC.m in Sources */,
+				CC2A58481C2EAD4B0038566D /* HomeCell.m in Sources */,
 				CCBCC7071C2D5E7C007105A8 /* AFHTTPRequestOperation.m in Sources */,
 				CCBCC70A1C2D5E7C007105A8 /* AFNetworkReachabilityManager.m in Sources */,
 				CCBCC7121C2D6119007105A8 /* Account.m in Sources */,
