@@ -17,4 +17,6 @@
 
 - (void)bandingCellContentWithInfo:(NSDictionary *)info;
 
++ (CGFloat)heightWithHomeCellText:(NSDictionary *)info;
+
 @end

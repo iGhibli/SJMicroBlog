@@ -16,6 +16,7 @@
 		CC5333121C2CF1730066C85D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC5333101C2CF1730066C85D /* LaunchScreen.storyboard */; };
 		CC5333221C2CFF400066C85D /* GuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5333211C2CFF400066C85D /* GuideVC.m */; };
 		CC5333271C2D05B10066C85D /* MainTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5333261C2D05B10066C85D /* MainTabBarVC.m */; };
+		CCAD83CE1C2ED858006ECF60 /* NSString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAD83CD1C2ED858006ECF60 /* NSString+Size.m */; };
 		CCBCC6F21C2D551F007105A8 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCBCC6F11C2D551F007105A8 /* LoginVC.m */; };
 		CCBCC7071C2D5E7C007105A8 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCBCC6F51C2D5E7C007105A8 /* AFHTTPRequestOperation.m */; };
 		CCBCC7081C2D5E7C007105A8 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CCBCC6F71C2D5E7C007105A8 /* AFHTTPRequestOperationManager.m */; };
@@ -50,6 +51,8 @@
 		CC5333231C2D01220066C85D /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		CC5333251C2D05B10066C85D /* MainTabBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarVC.h; sourceTree = "<group>"; };
 		CC5333261C2D05B10066C85D /* MainTabBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarVC.m; sourceTree = "<group>"; };
+		CCAD83CC1C2ED858006ECF60 /* NSString+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Size.h"; sourceTree = "<group>"; };
+		CCAD83CD1C2ED858006ECF60 /* NSString+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Size.m"; sourceTree = "<group>"; };
 		CCBCC6F01C2D551F007105A8 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
 		CCBCC6F11C2D551F007105A8 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		CCBCC6F41C2D5E7C007105A8 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -150,6 +153,8 @@
 				CC5333231C2D01220066C85D /* Common.h */,
 				CCBCC7131C2D6E0A007105A8 /* NSString+FilePath.h */,
 				CCBCC7141C2D6E0A007105A8 /* NSString+FilePath.m */,
+				CCAD83CC1C2ED858006ECF60 /* NSString+Size.h */,
+				CCAD83CD1C2ED858006ECF60 /* NSString+Size.m */,
 			);
 			name = Others;
 			sourceTree = "<group>";
@@ -346,6 +351,7 @@
 				CC2A58451C2E93DC0038566D /* HomeVC.m in Sources */,
 				CC2A58481C2EAD4B0038566D /* HomeCell.m in Sources */,
 				CCBCC7071C2D5E7C007105A8 /* AFHTTPRequestOperation.m in Sources */,
+				CCAD83CE1C2ED858006ECF60 /* NSString+Size.m in Sources */,
 				CCBCC70A1C2D5E7C007105A8 /* AFNetworkReachabilityManager.m in Sources */,
 				CCBCC7121C2D6119007105A8 /* Account.m in Sources */,
 				CCBCC70F1C2D5E7C007105A8 /* AFURLSessionManager.m in Sources */,

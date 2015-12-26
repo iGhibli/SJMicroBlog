@@ -7,8 +7,8 @@
 //
 
 #import "HomeCell.h"
-
-
+#import "NSString+Size.h"
+#import "Common.h"
 
 @implementation HomeCell
 
@@ -24,8 +24,17 @@
     self.source.text = info[@"source"];
 }
 
++ (CGFloat)heightWithHomeCellText:(NSDictionary *)info {
+    //计算文字显示需要的高度
+    NSString *text = info[@"text"];
+    CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:17] AndWidth:kScreenW - 20];
+    return size.height + 80 + 1 + 1;
+}
+
 - (void)awakeFromNib {
     // Initialization code
+    //label 预计显示的最大宽度
+    self.content.preferredMaxLayoutWidth = kScreenW - 20;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
