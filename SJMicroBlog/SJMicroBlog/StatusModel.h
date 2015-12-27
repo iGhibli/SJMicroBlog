@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @class UserModel;
 @interface StatusModel : NSObject
@@ -18,7 +19,7 @@
 //geo	object	地理信息字段 详细
 @property (nonatomic, strong) UserModel *user;//user	object	微博作者的用户信息字段 详细
 @property (nonatomic, strong) StatusModel *retweeted_status;//retweeted_status	object	被转发的原微博信息字段，当该微博为转发微博时返回 详细
-@property (nonatomic, strong) NSString *timeAgo;
+@property (nonatomic) NSString *timeAgo;
 
 - (instancetype)initStatusWithDictionary:(NSDictionary *)info;
 

@@ -11,6 +11,8 @@
 #import "Account.h"
 #import "AFNetworking.h"
 #import "HomeCell.h"
+#import "StatusModel.h"
+#import "UserModel.h"
 
 @interface HomeVC ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -43,7 +45,7 @@
     if (!params) {
         return;
     }
-    [params setValue:@100 forKey:@"count"];
+    [params setValue:@50 forKey:@"count"];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:URLString parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -52,9 +54,17 @@
         NSArray *result = responseObject[@"statuses"];
         NSLog(@"%@",result);
         //
+#if 1
         [result enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            [self.StatusArray addObject:obj];
+            StatusModel *model = [[StatusModel alloc]initStatusWithDictionary:obj];
+            [self.StatusArray addObject:model];
         }];
+#else
+        for (NSDictionary *dict in result) {
+            StatusModel *model = [[StatusModel alloc]initStatusWithDictionary:dict];
+            [self.StatusArray addObject:model];
+        }
+#endif
         //刷新TableView
         [self.tableView reloadData];
         
@@ -71,13 +81,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"homeCell" forIndexPath:indexPath];
-    [cell bandingCellContentWithInfo:self.StatusArray[indexPath.row]];
+    [cell bandingCellContentWithStatusModel:self.StatusArray[indexPath.row]];
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSDictionary *info = self.StatusArray[indexPath.row];
-    return [HomeCell heightWithHomeCellText:info];
+    StatusModel *model = self.StatusArray[indexPath.row];
+    return [HomeCell homeCellHeightWithStatusModel:model];
 }
 
 - (void)didReceiveMemoryWarning {

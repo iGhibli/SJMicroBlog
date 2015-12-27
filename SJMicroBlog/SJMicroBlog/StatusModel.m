@@ -14,6 +14,7 @@
 
 - (instancetype)initStatusWithDictionary:(NSDictionary *)info {
     if (self = [super init]) {
+#if 1
         //处理微博创建时间信息
         //创建格式化对象
         NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
@@ -25,8 +26,19 @@
         formatter.locale = local;
         //将计算出的时间格式的时间数据赋值给Created_at
         self.created_at = [formatter dateFromString:info[kStatusCreateTime]];
+#endif
+#if 0
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        
+        NSString *dataFormatterString = @"EEE MMM dd HH:mm:ss zzzzz yyyy";
+        formatter.dateFormat = dataFormatterString;
+        NSLocale *locale = [NSLocale currentLocale];
+        formatter.locale = locale;
+        self.created_at = [formatter dateFromString:info[kStatusCreateTime]];
+#endif
+        
         //从字典中取出对应数据并赋值
-        self.statusID = info[kStatusID];
+        self.statusID = [NSString stringWithFormat:@"%ld",(long int)info[kStatusID]];
         self.text = info[kStatusText];
         self.source = [self sourceWithString:info[kStatusSource]];
         NSDictionary *userInfo = info[kStatusUserInfo];
@@ -48,13 +60,14 @@
  *  @return 按指定格式输出的时间
  */
 - (NSString *)timeAgo {
+    
     //计算当前时间和创建时间的差值，单位为秒s。
     NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:self.created_at];
     if (interval < 60) {
         return @"刚刚";
     }else if (interval < 60 * 60) {
         return [NSString stringWithFormat:@"%ld 分钟前", (NSInteger)interval / 60];
-    }else if (interval < 60 * 60 *24) {
+    }else if (interval < 60 * 60 * 24) {
         return [NSString stringWithFormat:@"%ld 小时前", (NSInteger)interval / (60 * 60)];
     }else if (interval < 60 * 60 * 24 * 30) {
         return [NSString stringWithFormat:@"%ld 天前", (NSInteger)interval / (60 * 60 * 24)];
@@ -71,6 +84,7 @@
  *  @return 处理过后的有用信息
  */
 - (NSString *)sourceWithString:(NSString *)str {
+
     //排除无效的字符串
     if ([str isKindOfClass:[NSNull class]] || [str isEqualToString:@""] || !str) {
         return nil;
@@ -82,11 +96,13 @@
     NSRegularExpression *expression = [NSRegularExpression regularExpressionWithPattern:patternStr options:0 error:&error];
     //用正则表达式查找字符串中满足条件的结果
     NSTextCheckingResult *result = [expression firstMatchInString:str options:0 range:NSMakeRange(0, str.length)];
+//    NSLog(@"!!!!!!%@",error);
     if (result) {
         //根据结果取出满足条件的字符串
         NSRange range = result.range;
         NSString *source = [str substringWithRange:NSMakeRange(range.location + 1, range.length - 2)];
-        return [@"来自" stringByAppendingString:source];
+        NSString *sourceStr = [@"来自" stringByAppendingString:source];
+        return sourceStr;
     }
     return nil;
 }

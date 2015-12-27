@@ -9,14 +9,15 @@
 #import "HomeCell.h"
 #import "NSString+Size.h"
 #import "Common.h"
+#import "StatusModel.h"
+#import "UserModel.h"
 
 @implementation HomeCell
 
 
-- (void)bandingCellContentWithInfo:(NSDictionary *)info {
-    NSDictionary *content = info[@"user"];
+- (void)bandingCellContentWithStatusModel:(StatusModel *)model {
     
-    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:content[@"profile_image_url"]]];
+    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:model.user.profile_image_url]];
     self.icon.image = [UIImage imageWithData:data];
     
     //将头像图片剪成圆形，clipsToBounds、masksToBounds都可以实现。
@@ -24,15 +25,15 @@
     self.icon.clipsToBounds = YES;
 //    self.icon.layer.masksToBounds = YES;
     
-    self.name.text = content[@"name"];
-    self.time.text = content[@"created_at"];
-    self.content.text = info[@"text"];
-    self.source.text = info[@"source"];
+    self.name.text = model.user.name;
+    self.time.text = model.timeAgo;
+    self.content.text = model.text;
+    self.source.text = model.source;
 }
 
-+ (CGFloat)heightWithHomeCellText:(NSDictionary *)info {
++ (CGFloat)homeCellHeightWithStatusModel:(StatusModel *)model {
     //计算文字显示需要的高度
-    NSString *text = info[@"text"];
+    NSString *text = model.text;
     CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:17] AndWidth:kScreenW - 20];
     return size.height + 80 + 1 + 1;
 }

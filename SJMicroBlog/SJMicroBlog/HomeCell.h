@@ -16,8 +16,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *content;
 @property (weak, nonatomic) IBOutlet UILabel *source;
 
-- (void)bandingCellContentWithInfo:(StatusModel *)statusModel;
+- (void)bandingCellContentWithStatusModel:(StatusModel *)model;
 
-+ (CGFloat)heightWithHomeCellText:(StatusModel *)statusModel;
++ (CGFloat)homeCellHeightWithStatusModel:(StatusModel *)model;
 
 @end
