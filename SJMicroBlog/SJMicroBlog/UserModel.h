@@ -10,7 +10,7 @@
 
 @interface UserModel : NSObject
 
-@property (nonatomic, strong) NSString *userID;//id	int64	用户UID
+@property (nonatomic, strong) NSString *userModelID;//id	int64	用户UID
 @property (nonatomic, strong) NSString *name;//name	string	友好显示名称
 
 @property (nonatomic, strong) NSString *userDescription;//description	string	用户个人描述

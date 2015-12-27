@@ -7,12 +7,18 @@
 //
 
 #import "UserModel.h"
+#import "Common.h"
 
 @implementation UserModel
 
 - (instancetype)initUserModelWithDictionary:(NSDictionary *)info {
     if (self = [super init]) {
-        
+        self.userModelID = info[kUserID];
+        self.name = info[kUserInfoName];
+        self.userDescription = info[kUserDescription];
+        self.profile_image_url = info[kUserProfileImageURL];
+        self.avatar_large = info[kUserAvatarLarge];
+        self.verified_reason = info[kUserVerifiedReson];
     }
     return self;
 }

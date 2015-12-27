@@ -28,7 +28,7 @@
         //从字典中取出对应数据并赋值
         self.statusID = info[kStatusID];
         self.text = info[kStatusText];
-        self.source = info[kStatusSource];
+        self.source = [self sourceWithString:info[kStatusSource]];
         NSDictionary *userInfo = info[kStatusUserInfo];
         self.user = [[UserModel alloc] initUserModelWithDictionary:userInfo];
         NSDictionary *retweetedInfo = info[kStatusRetweetStatus];

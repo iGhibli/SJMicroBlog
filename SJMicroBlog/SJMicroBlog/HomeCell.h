@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+@class StatusModel;
 @interface HomeCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *icon;
 @property (weak, nonatomic) IBOutlet UILabel *name;
@@ -15,8 +16,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *content;
 @property (weak, nonatomic) IBOutlet UILabel *source;
 
-- (void)bandingCellContentWithInfo:(NSDictionary *)info;
+- (void)bandingCellContentWithInfo:(StatusModel *)statusModel;
 
-+ (CGFloat)heightWithHomeCellText:(NSDictionary *)info;
++ (CGFloat)heightWithHomeCellText:(StatusModel *)statusModel;
 
 @end
