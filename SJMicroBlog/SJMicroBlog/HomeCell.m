@@ -11,12 +11,14 @@
 #import "Common.h"
 #import "StatusModel.h"
 #import "UserModel.h"
+#import "UIImageView+WebCache.h"
 
 @implementation HomeCell
 
 
 - (void)bandingCellContentWithStatusModel:(StatusModel *)model {
-    
+#if 0
+    //存在头像图片不对应的Bug，启用这种方式。
     //GCD异步加载头像图片
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
    
@@ -24,6 +26,8 @@
         self.icon.image = [UIImage imageWithData:data];
         
     });
+#endif
+    [self.icon sd_setImageWithURL:[NSURL URLWithString:model.user.profile_image_url]];
     
     //将头像图片剪成圆形，clipsToBounds、masksToBounds都可以实现。
     self.icon.layer.cornerRadius = 25;

@@ -61,6 +61,7 @@
             //登录完成通过注册好的通知跳转到首页
             [[NSNotificationCenter defaultCenter] postNotificationName:kLoginSuccess object:nil];
             
+            
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"!!!!!!%@",error);
         }];
