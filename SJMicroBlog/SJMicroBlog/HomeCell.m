@@ -18,6 +18,12 @@
     
     NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:content[@"profile_image_url"]]];
     self.icon.image = [UIImage imageWithData:data];
+    
+    //将头像图片剪成圆形，clipsToBounds、masksToBounds都可以实现。
+    self.icon.layer.cornerRadius = 25;
+    self.icon.clipsToBounds = YES;
+//    self.icon.layer.masksToBounds = YES;
+    
     self.name.text = content[@"name"];
     self.time.text = content[@"created_at"];
     self.content.text = info[@"text"];
