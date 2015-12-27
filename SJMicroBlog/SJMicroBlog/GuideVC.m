@@ -37,11 +37,18 @@
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    
+    //有可能ScrollView没有减速效果就停止了
+    if (!decelerate) {
+        //未减速结束
+        self.pageControl.currentPage = scrollView.contentOffset.x / kScreenW;
+    }else {
+        //减速结束
+    }
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
+    //此处单独使用有漏洞，可能ScrollView没有减速效果
     self.pageControl.currentPage = scrollView.contentOffset.x / kScreenW;
 }
 
