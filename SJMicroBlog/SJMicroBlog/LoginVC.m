@@ -60,7 +60,7 @@
             [self dismissViewControllerAnimated:YES completion:nil];
             //登录完成通过注册好的通知跳转到首页
             [[NSNotificationCenter defaultCenter] postNotificationName:kLoginSuccess object:nil];
-            
+#warning !!!!
             
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"!!!!!!%@",error);
