@@ -9,6 +9,7 @@
 #import "settingVC.h"
 #import "Account.h"
 #import "MainTabBarVC.h"
+#import "SDImageCache.h"
 
 @interface settingVC ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -69,8 +70,14 @@
     }
     //其他Cell共同状态设置
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"settingCell" forIndexPath:indexPath];
+    
     cell.textLabel.text = self.cellTitles[indexPath.section][indexPath.row];
-    //
+    //添加缓存大小数据显示
+    if (indexPath.section == 2 && indexPath.row == 0) {
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f M",[[SDImageCache sharedImageCache] getSize] / 1024.f /1024.f];
+    }else {
+        cell.detailTextLabel.text = nil;
+    }
     
     return cell;
     
