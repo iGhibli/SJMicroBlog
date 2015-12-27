@@ -14,6 +14,7 @@
 
 - (instancetype)initStatusWithDictionary:(NSDictionary *)info {
     if (self = [super init]) {
+#warning 时间格式化之后一直为空！
 #if 1
         //处理微博创建时间信息
         //创建格式化对象

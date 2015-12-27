@@ -17,8 +17,13 @@
 
 - (void)bandingCellContentWithStatusModel:(StatusModel *)model {
     
-    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:model.user.profile_image_url]];
-    self.icon.image = [UIImage imageWithData:data];
+    //GCD异步加载头像图片
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+   
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:model.user.profile_image_url]];
+        self.icon.image = [UIImage imageWithData:data];
+        
+    });
     
     //将头像图片剪成圆形，clipsToBounds、masksToBounds都可以实现。
     self.icon.layer.cornerRadius = 25;
