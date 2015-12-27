@@ -10,6 +10,7 @@
 #import "Account.h"
 #import "MainTabBarVC.h"
 #import "SDImageCache.h"
+#import "UITableView+Index.h"
 
 @interface settingVC ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -84,34 +85,66 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 3 && indexPath.row == 0) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-        UIAlertAction *firstAction = [UIAlertAction actionWithTitle:@"退出" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-            
-            //删除登录信息
-            [[Account currentAccount] logoutAndDeleteAllInfo];
-            
-            //清除cookies，解决退出登录后直接使用cookies记录直接登录完成问题
-            NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-            [storage.cookies enumerateObjectsUsingBlock:^(NSHTTPCookie * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                [storage deleteCookie:obj];
+    
+    NSInteger index = [tableView indexOfAllTableViewCellWithIndexPath:indexPath];
+    switch (index) {
+        case 7:
+        {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+            UIAlertAction *firstAction = [UIAlertAction actionWithTitle:@"退出" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+                
+                //删除登录信息
+                [[Account currentAccount] logoutAndDeleteAllInfo];
+                
+                //清除cookies，解决退出登录后直接使用cookies记录直接登录完成问题
+                NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+                [storage.cookies enumerateObjectsUsingBlock:^(NSHTTPCookie * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    [storage deleteCookie:obj];
+                }];
+                
+                //模态消失当前界面
+                [self.navigationController popViewControllerAnimated:YES];
+                //获取Window
+                UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
+                //通过Window的RootViewController取到MainTabBarVC
+                MainTabBarVC *mainVC = (MainTabBarVC *)window.rootViewController;
+                //退出跳转到发现界面
+                [mainVC logoutJumpToFindVC];
+                
             }];
- 
-            //模态消失当前界面
-            [self.navigationController popViewControllerAnimated:YES];
-            //获取Window
-            UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
-            //通过Window的RootViewController取到MainTabBarVC
-            MainTabBarVC *mainVC = (MainTabBarVC *)window.rootViewController;
-            //退出跳转到发现界面
-            [mainVC logoutJumpToFindVC];
+            UIAlertAction *secondAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
+            [alert addAction:firstAction];
+            [alert addAction:secondAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+            break;
+        case 6:
+        {
             
-        }];
-        UIAlertAction *secondAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
-        [alert addAction:firstAction];
-        [alert addAction:secondAction];
-        [self presentViewController:alert animated:YES completion:nil];
+        }
+            break;
+        case 5:
+        {
+            
+        }
+            break;
+        case 4:
+        {
+            //清除缓存
+            [[SDImageCache sharedImageCache] clearDisk];
+            [tableView reloadData];
+        }
+            break;
+        case 3:
+        {
+            
+        }
+            break;
+            
+        default:
+            break;
     }
+
 }
 
 - (void)didReceiveMemoryWarning {

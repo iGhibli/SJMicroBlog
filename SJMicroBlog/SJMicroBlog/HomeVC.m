@@ -45,7 +45,7 @@
     if (!params) {
         return;
     }
-    [params setValue:@50 forKey:@"count"];
+    [params setValue:@100 forKey:@"count"];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:URLString parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {

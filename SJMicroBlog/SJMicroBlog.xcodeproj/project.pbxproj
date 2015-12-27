@@ -49,6 +49,7 @@
 		CCFFEF451C30089600ABDFE5 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFFEF331C30089600ABDFE5 /* UIImageView+HighlightedWebCache.m */; };
 		CCFFEF461C30089600ABDFE5 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFFEF351C30089600ABDFE5 /* UIImageView+WebCache.m */; };
 		CCFFEF471C30089600ABDFE5 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFFEF371C30089600ABDFE5 /* UIView+WebCacheOperation.m */; };
+		CCFFEF4A1C301A1600ABDFE5 /* UITableView+Index.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFFEF491C301A1600ABDFE5 /* UITableView+Index.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -137,6 +138,8 @@
 		CCFFEF351C30089600ABDFE5 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		CCFFEF361C30089600ABDFE5 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		CCFFEF371C30089600ABDFE5 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		CCFFEF481C301A1500ABDFE5 /* UITableView+Index.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Index.h"; sourceTree = "<group>"; };
+		CCFFEF491C301A1600ABDFE5 /* UITableView+Index.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Index.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,10 +181,10 @@
 		CC5333011C2CF1730066C85D /* SJMicroBlog */ = {
 			isa = PBXGroup;
 			children = (
+				CCFFEF101C2FB39400ABDFE5 /* StatusModel.h */,
 				CC53331E1C2CF5060066C85D /* OpenSources */,
 				CC53331D1C2CF4F50066C85D /* Models */,
 				CC53331C1C2CF4EC0066C85D /* Views */,
-				CC53331B1C2CF4D50066C85D /* Controllers */,
 				CC53331A1C2CF4BC0066C85D /* Tools */,
 				CC5333191C2CF4B30066C85D /* Others */,
 				CC5333021C2CF1730066C85D /* Supporting Files */,
@@ -210,6 +213,8 @@
 				CCBCC7141C2D6E0A007105A8 /* NSString+FilePath.m */,
 				CCAD83CC1C2ED858006ECF60 /* NSString+Size.h */,
 				CCAD83CD1C2ED858006ECF60 /* NSString+Size.m */,
+				CCFFEF481C301A1500ABDFE5 /* UITableView+Index.h */,
+				CCFFEF491C301A1600ABDFE5 /* UITableView+Index.m */,
 			);
 			name = Others;
 			sourceTree = "<group>";
@@ -237,6 +242,7 @@
 		CC53331C1C2CF4EC0066C85D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CC53331B1C2CF4D50066C85D /* Controllers */,
 				CC53330B1C2CF1730066C85D /* Main.storyboard */,
 				CC2A58461C2EAD4B0038566D /* HomeCell.h */,
 				CC2A58471C2EAD4B0038566D /* HomeCell.m */,
@@ -249,7 +255,6 @@
 			children = (
 				CCBCC7101C2D6119007105A8 /* Account.h */,
 				CCBCC7111C2D6119007105A8 /* Account.m */,
-				CCFFEF101C2FB39400ABDFE5 /* StatusModel.h */,
 				CCFFEF111C2FB39400ABDFE5 /* StatusModel.m */,
 				CCFFEF131C2FB3BA00ABDFE5 /* UserModel.h */,
 				CCFFEF141C2FB3BA00ABDFE5 /* UserModel.m */,
@@ -481,6 +486,7 @@
 				CCFFEF411C30089600ABDFE5 /* UIButton+WebCache.m in Sources */,
 				CC5333041C2CF1730066C85D /* main.m in Sources */,
 				CCFFEF391C30089600ABDFE5 /* NSData+ImageContentType.m in Sources */,
+				CCFFEF4A1C301A1600ABDFE5 /* UITableView+Index.m in Sources */,
 				CC5333271C2D05B10066C85D /* MainTabBarVC.m in Sources */,
 				CCBCC7151C2D6E0A007105A8 /* NSString+FilePath.m in Sources */,
 				CCFFEF3A1C30089600ABDFE5 /* SDImageCache.m in Sources */,
