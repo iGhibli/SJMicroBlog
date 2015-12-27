@@ -38,7 +38,6 @@
 }
 
 - (void)awakeFromNib {
-    // Initialization code
     //label 预计显示的最大宽度
     self.content.preferredMaxLayoutWidth = kScreenW - 20;
 }

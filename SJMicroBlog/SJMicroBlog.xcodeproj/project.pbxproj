@@ -31,6 +31,8 @@
 		CCBCC7151C2D6E0A007105A8 /* NSString+FilePath.m in Sources */ = {isa = PBXBuildFile; fileRef = CCBCC7141C2D6E0A007105A8 /* NSString+FilePath.m */; };
 		CCBCC7191C2D73FE007105A8 /* FindVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCBCC7181C2D73FE007105A8 /* FindVC.m */; };
 		CCBCC71D1C2D79FE007105A8 /* settingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCBCC71C1C2D79FE007105A8 /* settingVC.m */; };
+		CCFFEF121C2FB39400ABDFE5 /* StatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFFEF111C2FB39400ABDFE5 /* StatusModel.m */; };
+		CCFFEF151C2FB3BA00ABDFE5 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFFEF141C2FB3BA00ABDFE5 /* UserModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,10 @@
 		CCBCC7181C2D73FE007105A8 /* FindVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindVC.m; sourceTree = "<group>"; };
 		CCBCC71B1C2D79FE007105A8 /* settingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = settingVC.h; sourceTree = "<group>"; };
 		CCBCC71C1C2D79FE007105A8 /* settingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = settingVC.m; sourceTree = "<group>"; };
+		CCFFEF101C2FB39400ABDFE5 /* StatusModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusModel.h; sourceTree = "<group>"; };
+		CCFFEF111C2FB39400ABDFE5 /* StatusModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusModel.m; sourceTree = "<group>"; };
+		CCFFEF131C2FB3BA00ABDFE5 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		CCFFEF141C2FB3BA00ABDFE5 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,9 +154,9 @@
 		CC5333191C2CF4B30066C85D /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				CC5333231C2D01220066C85D /* Common.h */,
 				CC5333051C2CF1730066C85D /* AppDelegate.h */,
 				CC5333061C2CF1730066C85D /* AppDelegate.m */,
-				CC5333231C2D01220066C85D /* Common.h */,
 				CCBCC7131C2D6E0A007105A8 /* NSString+FilePath.h */,
 				CCBCC7141C2D6E0A007105A8 /* NSString+FilePath.m */,
 				CCAD83CC1C2ED858006ECF60 /* NSString+Size.h */,
@@ -194,6 +200,10 @@
 			children = (
 				CCBCC7101C2D6119007105A8 /* Account.h */,
 				CCBCC7111C2D6119007105A8 /* Account.m */,
+				CCFFEF101C2FB39400ABDFE5 /* StatusModel.h */,
+				CCFFEF111C2FB39400ABDFE5 /* StatusModel.m */,
+				CCFFEF131C2FB3BA00ABDFE5 /* UserModel.h */,
+				CCFFEF141C2FB3BA00ABDFE5 /* UserModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -352,10 +362,12 @@
 				CC2A58481C2EAD4B0038566D /* HomeCell.m in Sources */,
 				CCBCC7071C2D5E7C007105A8 /* AFHTTPRequestOperation.m in Sources */,
 				CCAD83CE1C2ED858006ECF60 /* NSString+Size.m in Sources */,
+				CCFFEF121C2FB39400ABDFE5 /* StatusModel.m in Sources */,
 				CCBCC70A1C2D5E7C007105A8 /* AFNetworkReachabilityManager.m in Sources */,
 				CCBCC7121C2D6119007105A8 /* Account.m in Sources */,
 				CCBCC70F1C2D5E7C007105A8 /* AFURLSessionManager.m in Sources */,
 				CCBCC71D1C2D79FE007105A8 /* settingVC.m in Sources */,
+				CCFFEF151C2FB3BA00ABDFE5 /* UserModel.m in Sources */,
 				CCBCC70D1C2D5E7C007105A8 /* AFURLRequestSerialization.m in Sources */,
 				CC5333071C2CF1730066C85D /* AppDelegate.m in Sources */,
 				CCBCC70E1C2D5E7C007105A8 /* AFURLResponseSerialization.m in Sources */,
