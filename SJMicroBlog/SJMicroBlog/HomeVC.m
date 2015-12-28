@@ -13,6 +13,7 @@
 #import "HomeCell.h"
 #import "StatusModel.h"
 #import "UserModel.h"
+#import "DataBaseEngine.h"
 
 @interface HomeVC ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -67,6 +68,9 @@
 #endif
         //刷新TableView
         [self.tableView reloadData];
+        
+        //将网络请求数据保存到SQLite3数据库
+        [DataBaseEngine saveStatus:result];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"!!!!!!%@",error);
