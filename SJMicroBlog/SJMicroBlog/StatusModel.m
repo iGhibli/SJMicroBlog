@@ -39,7 +39,8 @@
 #endif
         
         //从字典中取出对应数据并赋值
-        self.statusID = [NSString stringWithFormat:@"%ld",(long int)info[kStatusID]];
+//        self.statusID = [NSString stringWithFormat:@"%ld",(long int)info[kStatusID]];
+        self.statusID = info[kStatusID];
         self.text = info[kStatusText];
         self.source = [self sourceWithString:info[kStatusSource]];
         NSDictionary *userInfo = info[kStatusUserInfo];

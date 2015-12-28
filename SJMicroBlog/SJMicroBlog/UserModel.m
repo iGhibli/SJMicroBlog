@@ -13,7 +13,8 @@
 
 - (instancetype)initUserModelWithDictionary:(NSDictionary *)info {
     if (self = [super init]) {
-        self.userModelID = [NSString stringWithFormat:@"%ld",(long int)info[kUserID]];
+//        self.userModelID = [NSString stringWithFormat:@"%ld",(long int)info[kUserID]];
+        self.userModelID = info[kUserID];
         self.name = info[kUserInfoName];
         self.userDescription = info[kUserDescription];
         self.profile_image_url = info[kUserProfileImageURL];
