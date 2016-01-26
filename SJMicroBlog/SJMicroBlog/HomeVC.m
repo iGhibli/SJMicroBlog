@@ -14,6 +14,7 @@
 #import "StatusModel.h"
 #import "UserModel.h"
 #import "DataBaseEngine.h"
+#import "MJRefresh.h"
 
 @interface HomeVC ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -23,11 +24,53 @@
 
 @implementation HomeVC
 
+- (void)awakeFromNib {
+    //从故事版初始化后都会走的方法
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self loadDatas];
+    
+    //使用MJRefresh的下拉刷新控件
+    // 设置自动切换透明度
+    self.tableView.mj_header.automaticallyChangeAlpha = YES;
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        
+        NSString *URLString = [kBaseURL stringByAppendingPathComponent:@"statuses/home_timeline.json"];
+        NSDictionary *params = [[Account currentAccount] requestToken];
+        if (!params) {
+            return;
+        }
+        [params setValue:[self.StatusArray.firstObject statusID] forKey:@"since_id"];
+        
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        [manager GET:URLString parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            
+            NSArray *result = responseObject[@"statuses"];
+            //
+            NSMutableArray *tempArray = [NSMutableArray array];
+            [result enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                StatusModel *model = [[StatusModel alloc]initStatusWithDictionary:obj];
+                [tempArray addObject:model];
+            }];
+            [tempArray addObjectsFromArray:self.StatusArray];
+            self.StatusArray = tempArray;
+            //刷新TableView
+            [self.tableView reloadData];
+            [self.tableView.mj_header endRefreshing];
+            
+#warning 显示更新数据数
+            //将网络请求数据保存到SQLite3数据库
+            [DataBaseEngine saveStatus:result];
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"!!!!!!%@",error);
+        }];
+    }];
+    
 }
 
 #pragma mark - Geeter & Setter
@@ -55,17 +98,11 @@
         NSArray *result = responseObject[@"statuses"];
         NSLog(@"%@",result);
         //
-#if 1
         [result enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             StatusModel *model = [[StatusModel alloc]initStatusWithDictionary:obj];
             [self.StatusArray addObject:model];
         }];
-#else
-        for (NSDictionary *dict in result) {
-            StatusModel *model = [[StatusModel alloc]initStatusWithDictionary:dict];
-            [self.StatusArray addObject:model];
-        }
-#endif
+
         //刷新TableView
         [self.tableView reloadData];
         
@@ -99,14 +136,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
