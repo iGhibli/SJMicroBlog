@@ -12,9 +12,16 @@
 #import "StatusModel.h"
 #import "UserModel.h"
 #import "UIImageView+WebCache.h"
+#import "UIButton+WebCache.h"
 
 @implementation HomeCell
 
+//初始化代码
+- (void)awakeFromNib {
+    //label 预计显示的最大宽度
+    self.content.preferredMaxLayoutWidth = kScreenW - 20;
+    self.reContent.preferredMaxLayoutWidth = self.content.preferredMaxLayoutWidth;
+}
 
 - (void)bandingCellContentWithStatusModel:(StatusModel *)model {
 #if 0
@@ -38,6 +45,51 @@
     self.time.text = model.timeAgo;
     self.content.text = model.text;
     self.source.text = model.source;
+    //设置转发视图显示
+    StatusModel *reTwitter = model.retweeted_status;
+    self.reContent.text = reTwitter.text;
+    [self layoutImages:reTwitter.pic_urls andHeight:self.reImageSupHeight forView:self.reImageSup];
+    if (reTwitter) {
+        //有转发微博的时候
+        [self layoutImages:nil andHeight:self.imageSupHeight forView:self.imageSup];
+    }else {
+        //没有转发微博时
+        [self layoutImages:model.pic_urls andHeight:self.imageSupHeight forView:self.imageSup];
+    }
+    
+}
+
+- (void)layoutImages:(NSArray *)images andHeight:(NSLayoutConstraint *)constraint forView:(UIView *)view
+{
+    //移走子视图
+    NSArray *subViews = view.subviews;
+    [subViews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    
+    //根据图片显示需要的高度设定View高度上的约束
+    CGFloat height = [self imageSuperViewHeightWithCount:images.count];
+    constraint.constant = height;
+    [images enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        //images中的元素obj是字典
+        NSString *imageURL = [obj objectForKey:@"thumbnail_pic"];
+        //初始化UIButton
+        UIButton *imageBtn = [[UIButton alloc]initWithFrame:CGRectMake((idx % 3 * (90 + 5)), (idx / 3 * (90 + 5)), 90, 90)];
+        [imageBtn sd_setBackgroundImageWithURL:[NSURL URLWithString:imageURL] forState:UIControlStateNormal];
+        imageBtn.tag = idx;
+        [view addSubview:imageBtn];
+    }];
+}
+
+- (CGFloat)imageSuperViewHeightWithCount:(NSInteger)count
+{
+    //0张时返回0
+    if (count <= 0) {
+        return 0;
+    }
+    //显示需要的行数(ceil取整)
+    NSInteger line = ceil(count / 3.f);
+    //计算显示需要的高度
+    CGFloat height = line * 90 + (line - 1) * 5;
+    return height;
 }
 
 + (CGFloat)homeCellHeightWithStatusModel:(StatusModel *)model {
@@ -45,11 +97,6 @@
     NSString *text = model.text;
     CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:17] AndWidth:kScreenW - 20];
     return size.height + 80 + 1 + 1;
-}
-
-- (void)awakeFromNib {
-    //label 预计显示的最大宽度
-    self.content.preferredMaxLayoutWidth = kScreenW - 20;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

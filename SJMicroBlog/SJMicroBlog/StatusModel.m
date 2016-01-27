@@ -45,6 +45,7 @@
         self.source = [self sourceWithString:info[kStatusSource]];
         NSDictionary *userInfo = info[kStatusUserInfo];
         self.user = [[UserModel alloc] initUserModelWithDictionary:userInfo];
+        self.pic_urls = info[kStatusPicUrls];
         NSDictionary *retweetedInfo = info[kStatusRetweetStatus];
         //判断转发内容信息是否存在
         if (retweetedInfo) {
