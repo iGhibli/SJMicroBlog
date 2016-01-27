@@ -21,6 +21,9 @@
 @property (nonatomic, strong) StatusModel *retweeted_status;//retweeted_status	object	被转发的原微博信息字段，当该微博为转发微博时返回 详细
 @property (nonatomic, strong) NSArray *pic_urls;//微博配图的略缩图
 @property (nonatomic) NSString *timeAgo;
+@property (nonatomic, strong) NSNumber *reposts_count;//转发数
+@property (nonatomic, strong) NSNumber *comments_count;//评论数
+@property (nonatomic, strong) NSNumber *attitudes_count;//点赞数
 
 - (instancetype)initStatusWithDictionary:(NSDictionary *)info;
 

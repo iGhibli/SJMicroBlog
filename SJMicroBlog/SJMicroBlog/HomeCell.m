@@ -47,10 +47,13 @@
     self.source.text = model.source;
     //设置转发视图显示
     StatusModel *reTwitter = model.retweeted_status;
+    
     self.reContent.text = reTwitter.text;
     [self layoutImages:reTwitter.pic_urls andHeight:self.reImageSupHeight forView:self.reImageSup];
+    
     if (reTwitter) {
         //有转发微博的时候
+        //设置imageSup的高度为0
         [self layoutImages:nil andHeight:self.imageSupHeight forView:self.imageSup];
     }else {
         //没有转发微博时
@@ -72,7 +75,7 @@
         //images中的元素obj是字典
         NSString *imageURL = [obj objectForKey:@"thumbnail_pic"];
         //初始化UIButton
-        UIButton *imageBtn = [[UIButton alloc]initWithFrame:CGRectMake((idx % 3 * (90 + 5)), (idx / 3 * (90 + 5)), 90, 90)];
+        UIButton *imageBtn = [[UIButton alloc]initWithFrame:CGRectMake(5 +(idx % 3 * (90 + 5)), 5 + (idx / 3 * (90 + 5)), 90, 90)];
         [imageBtn sd_setBackgroundImageWithURL:[NSURL URLWithString:imageURL] forState:UIControlStateNormal];
         imageBtn.tag = idx;
         [view addSubview:imageBtn];
@@ -87,17 +90,20 @@
     }
     //显示需要的行数(ceil取整)
     NSInteger line = ceil(count / 3.f);
+    if (line >= 3) {
+        line = 3;
+    }
     //计算显示需要的高度
-    CGFloat height = line * 90 + (line - 1) * 5;
+    CGFloat height = line * 90 + (line - 1) * 5 + 10;
     return height;
 }
 
-+ (CGFloat)homeCellHeightWithStatusModel:(StatusModel *)model {
-    //计算文字显示需要的高度
-    NSString *text = model.text;
-    CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:17] AndWidth:kScreenW - 20];
-    return size.height + 80 + 1 + 1;
-}
+//+ (CGFloat)homeCellHeightWithStatusModel:(StatusModel *)model {
+//    //计算文字显示需要的高度
+//    NSString *text = model.text;
+//    CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:17] AndWidth:kScreenW - 20];
+//    return size.height + 80 + 1 + 1;
+//}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

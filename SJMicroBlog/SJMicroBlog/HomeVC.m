@@ -15,6 +15,7 @@
 #import "UserModel.h"
 #import "DataBaseEngine.h"
 #import "MJRefresh.h"
+#import "FooterView.h"
 
 @interface HomeVC ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -32,6 +33,7 @@
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    [self.tableView registerNib:[UINib nibWithNibName:@"FooterView" bundle:nil] forHeaderFooterViewReuseIdentifier:@"FooterView"];
     [self loadDatas];
     //添加下拉刷新控件
     [self addMJRefresh];
@@ -174,25 +176,47 @@
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     return self.StatusArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"homeCell" forIndexPath:indexPath];
-    [cell bandingCellContentWithStatusModel:self.StatusArray[indexPath.row]];
+    [cell bandingCellContentWithStatusModel:self.StatusArray[indexPath.section]];
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     HomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"homeCell"];
-    [cell bandingCellContentWithStatusModel:self.StatusArray[indexPath.row]];
+    [cell bandingCellContentWithStatusModel:self.StatusArray[indexPath.section]];
     return [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height + 1;
     
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 5.f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 20.f;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    FooterView *footer = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"FooterView"];
+    [footer bandingStatusModel:self.StatusArray[section]];
+    return footer;
+}
+
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == self.StatusArray.count - 3) {
+    if (indexPath.section == self.StatusArray.count - 3) {
         [self loadMoreData];
     }
 }

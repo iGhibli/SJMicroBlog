@@ -23,6 +23,7 @@
 
 - (void)bandingCellContentWithStatusModel:(StatusModel *)model;
 
-+ (CGFloat)homeCellHeightWithStatusModel:(StatusModel *)model;
+//
+//+ (CGFloat)homeCellHeightWithStatusModel:(StatusModel *)model;
 
 @end

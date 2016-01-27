@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC072EF21C58A8D9004AECFF /* FooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC072EF11C58A8D9004AECFF /* FooterView.m */; };
+		CC072EF41C58A8EA004AECFF /* FooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC072EF31C58A8EA004AECFF /* FooterView.xib */; };
 		CC07383E1C57B20300012DAD /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0738141C57B20300012DAD /* MJRefreshAutoFooter.m */; };
 		CC07383F1C57B20300012DAD /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0738161C57B20300012DAD /* MJRefreshBackFooter.m */; };
 		CC0738401C57B20300012DAD /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0738181C57B20300012DAD /* MJRefreshComponent.m */; };
@@ -27,7 +29,6 @@
 		CC07384F1C57B20300012DAD /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = CC07383B1C57B20300012DAD /* UIScrollView+MJRefresh.m */; };
 		CC0738501C57B20300012DAD /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CC07383D1C57B20300012DAD /* UIView+MJExtension.m */; };
 		CC2A58451C2E93DC0038566D /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2A58441C2E93DC0038566D /* HomeVC.m */; };
-		CC2A58481C2EAD4B0038566D /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2A58471C2EAD4B0038566D /* HomeCell.m */; };
 		CC5333041C2CF1730066C85D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5333031C2CF1730066C85D /* main.m */; };
 		CC5333071C2CF1730066C85D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5333061C2CF1730066C85D /* AppDelegate.m */; };
 		CC53330D1C2CF1730066C85D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC53330B1C2CF1730066C85D /* Main.storyboard */; };
@@ -80,6 +81,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC072EF01C58A8D9004AECFF /* FooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FooterView.h; sourceTree = "<group>"; };
+		CC072EF11C58A8D9004AECFF /* FooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FooterView.m; sourceTree = "<group>"; };
+		CC072EF31C58A8EA004AECFF /* FooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FooterView.xib; sourceTree = "<group>"; };
 		CC0738131C57B20300012DAD /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		CC0738141C57B20300012DAD /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		CC0738151C57B20300012DAD /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -420,6 +424,9 @@
 				CC53330B1C2CF1730066C85D /* Main.storyboard */,
 				CC2A58461C2EAD4B0038566D /* HomeCell.h */,
 				CC2A58471C2EAD4B0038566D /* HomeCell.m */,
+				CC072EF01C58A8D9004AECFF /* FooterView.h */,
+				CC072EF11C58A8D9004AECFF /* FooterView.m */,
+				CC072EF31C58A8EA004AECFF /* FooterView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -647,6 +654,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC5333121C2CF1730066C85D /* LaunchScreen.storyboard in Resources */,
+				CC072EF41C58A8EA004AECFF /* FooterView.xib in Resources */,
 				CC7E1C841C3158C100C7724D /* status.db in Resources */,
 				CC53330F1C2CF1730066C85D /* Assets.xcassets in Resources */,
 				CC07384C1C57B20300012DAD /* MJRefresh.bundle in Resources */,
@@ -669,13 +677,13 @@
 				CC2A58451C2E93DC0038566D /* HomeVC.m in Sources */,
 				CC07383F1C57B20300012DAD /* MJRefreshBackFooter.m in Sources */,
 				CC7E1C7B1C31570000C7724D /* FMDatabaseAdditions.m in Sources */,
-				CC2A58481C2EAD4B0038566D /* HomeCell.m in Sources */,
 				CCBCC7071C2D5E7C007105A8 /* AFHTTPRequestOperation.m in Sources */,
 				CC07384D1C57B20300012DAD /* MJRefreshConst.m in Sources */,
 				CC7E1C7C1C31570000C7724D /* FMDatabasePool.m in Sources */,
 				CC0738481C57B20300012DAD /* MJRefreshBackStateFooter.m in Sources */,
 				CCFFEF3B1C30089600ABDFE5 /* SDWebImageCompat.m in Sources */,
 				CCFFEF3E1C30089600ABDFE5 /* SDWebImageDownloaderOperation.m in Sources */,
+				CC072EF21C58A8D9004AECFF /* FooterView.m in Sources */,
 				CCAD83CE1C2ED858006ECF60 /* NSString+Size.m in Sources */,
 				CCFFEF121C2FB39400ABDFE5 /* StatusModel.m in Sources */,
 				CCFFEF461C30089600ABDFE5 /* UIImageView+WebCache.m in Sources */,
