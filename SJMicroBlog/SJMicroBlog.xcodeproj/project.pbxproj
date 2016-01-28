@@ -36,6 +36,7 @@
 		CC5333121C2CF1730066C85D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC5333101C2CF1730066C85D /* LaunchScreen.storyboard */; };
 		CC5333221C2CFF400066C85D /* GuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5333211C2CFF400066C85D /* GuideVC.m */; };
 		CC5333271C2D05B10066C85D /* MainTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5333261C2D05B10066C85D /* MainTabBarVC.m */; };
+		CC7855F01C59AB220007EA0E /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7855EF1C59AB220007EA0E /* HomeCell.m */; };
 		CC7E1C7A1C31570000C7724D /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7E1C701C31570000C7724D /* FMDatabase.m */; };
 		CC7E1C7B1C31570000C7724D /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7E1C721C31570000C7724D /* FMDatabaseAdditions.m */; };
 		CC7E1C7C1C31570000C7724D /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7E1C741C31570000C7724D /* FMDatabasePool.m */; };
@@ -124,8 +125,6 @@
 		CC07383D1C57B20300012DAD /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		CC2A58431C2E93DC0038566D /* HomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
 		CC2A58441C2E93DC0038566D /* HomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeVC.m; sourceTree = "<group>"; };
-		CC2A58461C2EAD4B0038566D /* HomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
-		CC2A58471C2EAD4B0038566D /* HomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
 		CC5332FF1C2CF1730066C85D /* SJMicroBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SJMicroBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC5333031C2CF1730066C85D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CC5333051C2CF1730066C85D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -139,6 +138,8 @@
 		CC5333231C2D01220066C85D /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		CC5333251C2D05B10066C85D /* MainTabBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarVC.h; sourceTree = "<group>"; };
 		CC5333261C2D05B10066C85D /* MainTabBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarVC.m; sourceTree = "<group>"; };
+		CC7855EE1C59AB220007EA0E /* HomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
+		CC7855EF1C59AB220007EA0E /* HomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
 		CC7E1C6F1C31570000C7724D /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		CC7E1C701C31570000C7724D /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
 		CC7E1C711C31570000C7724D /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
@@ -422,11 +423,11 @@
 			isa = PBXGroup;
 			children = (
 				CC53330B1C2CF1730066C85D /* Main.storyboard */,
-				CC2A58461C2EAD4B0038566D /* HomeCell.h */,
-				CC2A58471C2EAD4B0038566D /* HomeCell.m */,
 				CC072EF01C58A8D9004AECFF /* FooterView.h */,
 				CC072EF11C58A8D9004AECFF /* FooterView.m */,
 				CC072EF31C58A8EA004AECFF /* FooterView.xib */,
+				CC7855EE1C59AB220007EA0E /* HomeCell.h */,
+				CC7855EF1C59AB220007EA0E /* HomeCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -726,6 +727,7 @@
 				CCBCC7091C2D5E7C007105A8 /* AFHTTPSessionManager.m in Sources */,
 				CC0738491C57B20300012DAD /* MJRefreshGifHeader.m in Sources */,
 				CC7E1C7D1C31570000C7724D /* FMDatabaseQueue.m in Sources */,
+				CC7855F01C59AB220007EA0E /* HomeCell.m in Sources */,
 				CC07383E1C57B20300012DAD /* MJRefreshAutoFooter.m in Sources */,
 				CC0738441C57B20300012DAD /* MJRefreshAutoNormalFooter.m in Sources */,
 				CC0738401C57B20300012DAD /* MJRefreshComponent.m in Sources */,
